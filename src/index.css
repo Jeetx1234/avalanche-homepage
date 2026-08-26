@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Bebas Neue", sans-serif;
+  --font-body: "Poppins", sans-serif;
+}
+
+.avalanche-letter {
+  display: inline-block;
+
+  background: linear-gradient(
+    120deg,
+    #000 0%,
+    #111 20%,
+    #444 45%,
+    #050505 50%,
+    #333 55%,
+    #080808 75%,
+    #000 100%
+  );
+
+  background-size: 250% 250%;
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+
+  filter:
+    drop-shadow(0 5px 5px rgba(0, 0, 0, 0.3))
+    drop-shadow(0 12px 12px rgba(0, 0, 0, 0.12));
+
+  animation:
+    avalancheWave 3.2s ease-in-out infinite,
+    avalancheShine 5s linear infinite;
+
+  transform-origin: center bottom;
+}
+
+@keyframes avalancheWave {
+  0% {
+    transform: translateY(0) rotate(0deg) skewX(0deg);
+  }
+
+  25% {
+    transform: translateY(-5px) rotate(-1.5deg) skewX(-1deg);
+  }
+
+  50% {
+    transform: translateY(2px) rotate(1deg) skewX(1deg);
+  }
+
+  75% {
+    transform: translateY(-4px) rotate(-1deg) skewX(-0.7deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0deg) skewX(0deg);
+  }
+}
+
+@keyframes avalancheShine {
+  0% {
+    background-position: 200% 50%;
+  }
+
+  100% {
+    background-position: -200% 50%;
+  }
+}
